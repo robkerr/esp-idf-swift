@@ -33,6 +33,6 @@ let package = Package(
     targets: [
         .target(
             name: "ESPProvision",
-            dependencies: [])
+            dependencies: ["CESPProvision", "Curve25519", "SwiftProtobuf"])
     ]
 )
