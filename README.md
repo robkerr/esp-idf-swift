@@ -1,6 +1,6 @@
 # esp-idf-swift
 
-This repository is a restructure of the ESP-IDF code into a repository that supports Swift Package Manager, while maintaining support for CocoaPods.
+This repository is a restructure of the ESP-IDF code into a repository that supports Swift Package Manager, while maintaining support for CocoaPods. This is meant as a reference implementation for adding SPM support to the main ESP-IDF library.
 
 To support both package managers, the Objective-C modules are refactored into their own repository:
 [esp-idf-objc](https://github.com/robkerr/esp-idf-objc)
@@ -21,5 +21,5 @@ In total the following structure changes were implemented as part of this refact
 
 The resulting experience for developers:
 - CocoaPod users would integreate the library as before, by adding pod ESPProvision to their Podfile
-- Swift Package Manager users would use the .git url for the esp-idf-swift repository
+- Swift Package Manager users would add the Swift Package from within Xcode using the .git url, e.g. https://github.com/robkerr/esp-idf-swift
 - For both CocoaPods and SPM, the dependent C module will be imported automatically.
