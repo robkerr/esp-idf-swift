@@ -27,11 +27,12 @@ Pod::Spec.new do |spec|
 
   spec.source_files = "CESPProvision", "Sources/ESPProvision/**/*.swift"
   
+  # The following repo has not been published (yet) so will fail until it is available.
+  spec.dependency "CESPProvision"
+  
   spec.subspec 'Core' do |cs|
       cs.dependency "SwiftProtobuf", "~> 1.5.0"
       cs.dependency "Curve25519", "~> 1.1.0"
-      # The following repo has not been published (yet) so will fail until it is available.
-      cs.dependency "CESPProvision"
   end
 
   spec.swift_versions = ['5.1', '5.2']
