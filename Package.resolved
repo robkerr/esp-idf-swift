@@ -1,0 +1,34 @@
+{
+  "object": {
+    "pins": [
+      {
+        "package": "CCurve25519",
+        "repositoryURL": "https://github.com/christophhagen/CCurve25519.git",
+        "state": {
+          "branch": null,
+          "revision": "f27fa9a2cf0c61a3cb9d9a03b3d3d801ccc64b32",
+          "version": "1.0.4"
+        }
+      },
+      {
+        "package": "Curve25519",
+        "repositoryURL": "https://github.com/christophhagen/Curve25519.git",
+        "state": {
+          "branch": null,
+          "revision": "9fb345d6bfa2cc14af0ff1a8bc14d17046191e97",
+          "version": "2.0.0"
+        }
+      },
+      {
+        "package": "SwiftProtobuf",
+        "repositoryURL": "https://github.com/apple/swift-protobuf.git",
+        "state": {
+          "branch": null,
+          "revision": "bfe4255ff60f22a41cafa113059668571ed5d461",
+          "version": "1.16.0"
+        }
+      }
+    ]
+  },
+  "version": 1
+}

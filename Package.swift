@@ -4,25 +4,35 @@
 import PackageDescription
 
 let package = Package(
-    name: "esp-idf-swift",
+    name: "ESPProvision",
+    platforms: [
+        .iOS(.v11)
+    ],
     products: [
-        // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
-            name: "esp-idf-swift",
-            targets: ["esp-idf-swift"]),
+            name: "ESPProvision",
+            targets: ["ESPProvision"]),
     ],
     dependencies: [
-        // Dependencies declare other packages that this package depends on.
-        // .package(url: /* package url */, from: "1.0.0"),
+        .package(
+            name: "Curve25519",
+            url: "https://github.com/christophhagen/Curve25519.git",
+            from: "2.0.0"
+        ),
+        .package(
+            name: "SwiftProtobuf",
+            url: "https://github.com/apple/swift-protobuf.git",
+            "1.15.0" ..< "2.0.0"
+        ),
+        .package(
+            name: "CESPProvision",
+            url: "https://github.com/robkerr/esp-idf-swift.git",
+            "0.0.1" ..< "1.0.0"
+        )
     ],
     targets: [
-        // Targets are the basic building blocks of a package. A target can define a module or a test suite.
-        // Targets can depend on other targets in this package, and on products in packages this package depends on.
         .target(
-            name: "esp-idf-swift",
-            dependencies: []),
-        .testTarget(
-            name: "esp-idf-swiftTests",
-            dependencies: ["esp-idf-swift"]),
+            name: "ESPProvision",
+            dependencies: [])
     ]
 )
