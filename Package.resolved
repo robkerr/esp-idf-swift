@@ -20,6 +20,15 @@
         }
       },
       {
+        "package": "CESPProvision",
+        "repositoryURL": "https://github.com/robkerr/esp-idf-objc.git",
+        "state": {
+          "branch": null,
+          "revision": "0fb2d037757a1afd796fabc5ecaf6e9cc798fbd5",
+          "version": "0.1.1"
+        }
+      },
+      {
         "package": "SwiftProtobuf",
         "repositoryURL": "https://github.com/apple/swift-protobuf.git",
         "state": {

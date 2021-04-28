@@ -26,8 +26,8 @@ let package = Package(
         ),
         .package(
             name: "CESPProvision",
-            url: "https://github.com/robkerr/esp-idf-swift.git",
-            "0.0.1" ..< "1.0.0"
+            url: "https://github.com/robkerr/esp-idf-objc.git",
+            "0.1.0" ..< "1.0.0"
         )
     ],
     targets: [

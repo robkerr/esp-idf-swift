@@ -26,6 +26,12 @@ Pod::Spec.new do |spec|
   spec.source = { :git => "https://github.com/espressif/esp-idf-provisioning-ios.git", :tag => "lib-#{spec.version}" }
 
   spec.source_files = "CESPProvision", "Sources/ESPProvision/**/*.swift"
+  
+  spec.subspec 'Core' do |cs|
+      cs.dependency "SwiftProtobuf", "~> 1.5.0"
+      cs.dependency "Curve25519", "~> 1.1.0"
+      cs.dependency 'CESPProvision', :git => 'https://github.com/robkerr/esp-idf-objc.git'
+  end
 
   spec.swift_versions = ['5.1', '5.2']
 
