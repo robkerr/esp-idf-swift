@@ -47,12 +47,12 @@ class ESPUtility {
     ///
     /// - Parameter descriptor: The CBDescriptor of a BLE characteristic.
     func processDescriptor(descriptor: CBDescriptor) {
-        if let value = descriptor.value as? String {
+        if let value = descriptor.value as? String, let char = descriptor.characteristic {
             if value.contains(ESPConstants.sessionPath) {
                 peripheralConfigured = true
                 sessionCharacteristic = descriptor.characteristic
             }
-            configUUIDMap.updateValue(descriptor.characteristic, forKey: value)
+            configUUIDMap.updateValue(char, forKey: value)
         }
     }
 }
