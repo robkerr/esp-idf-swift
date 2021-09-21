@@ -47,12 +47,22 @@ class ESPUtility {
     ///
     /// - Parameter descriptor: The CBDescriptor of a BLE characteristic.
     func processDescriptor(descriptor: CBDescriptor) {
+        
+    #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 150000
         if let value = descriptor.value as? String, let char = descriptor.characteristic {
+    #else
+        if let value = descriptor.value as? String {
+    #endif
+    
             if value.contains(ESPConstants.sessionPath) {
                 peripheralConfigured = true
                 sessionCharacteristic = descriptor.characteristic
-            }
+            }        
+    #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 150000        
             configUUIDMap.updateValue(char, forKey: value)
+    #else
+            configUUIDMap.updateValue(descriptor.characteristic, forKey: value)
+    #endif
         }
     }
 }
