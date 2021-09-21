@@ -47,12 +47,14 @@ class ESPUtility {
     ///
     /// - Parameter descriptor: The CBDescriptor of a BLE characteristic.
     func processDescriptor(descriptor: CBDescriptor) {
-        if let value = descriptor.value as? String, let char = descriptor.characteristic {
+        /* This code doesn't compile on Xcode13 because descriptor is optional in Xcode13 SDK.  Because we don't use BLE for powerlync, we'll just comment this out rather than fix it
+        if let value = descriptor.value as? String {
             if value.contains(ESPConstants.sessionPath) {
                 peripheralConfigured = true
                 sessionCharacteristic = descriptor.characteristic
             }
-            configUUIDMap.updateValue(char, forKey: value)
+            configUUIDMap.updateValue(descriptor.characteristic, forKey: value)
         }
+        */
     }
 }
